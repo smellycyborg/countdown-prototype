@@ -1,5 +1,5 @@
 --[[
-Authors:    Ziffix, Cha
+Authors:    Ziffix, Chavez
 Version:    1.2.4 (Untested)
 Date:       23/2/20
 ]]

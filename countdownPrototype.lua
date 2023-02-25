@@ -80,7 +80,7 @@ local function _countdownStart(countdown: Countdown)
 			end
 			
 			if secondsLeft ~= 0 then
-				task.spawn(taskInfo.callback, secondsLeft, taskInfo.args)
+				task.spawn(taskInfo.callback, secondsLeft, table.unpack(taskInfo.args))
 			end
 		end
 	end
@@ -291,6 +291,10 @@ Cleans up object data.
 ]]
 function countdownPrototype:destroy()
 	local private = _assertLevel(countdownPrivate[self], "Cooldown object is destroyed", 1)
+	
+	if coroutine.status(private.thread) == "suspended" then
+		coroutine.close(private.thread)
+	end
 
 	private.tick:Destroy()
 	private.finished:Destroy()

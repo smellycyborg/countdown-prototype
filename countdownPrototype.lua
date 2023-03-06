@@ -1,6 +1,6 @@
 --[[
 Authors:    Ziffix, Chavez
-Version:    1.2.4 (stable)
+Version:    1.2.4 (semi-stable, needs another test)
 Date:       23/2/20
 ]]
 
